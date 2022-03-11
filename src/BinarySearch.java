@@ -5,15 +5,18 @@ import java.util.Scanner;
 public class BinarySearch {
     private static int[] numbers = new int[30];
     private static int BinaryCount = 0;
+    private static int bubbleSortConter = 0;
 
     public static void main(String[] args) {
         randomnumber();
+        printnumber();
         bubbleSort(numbers);
         printnumber();
+        System.out.println("the counter of bubble sort is "+bubbleSortConter);
         Arrays.sort(numbers);
        printnumber();
         int item = 23 ;
-        System.out.println();
+
         System.out.println("BinraySearch found " + item + " at index " + BirnaySearch(item));
         System.out.println("BinarySearch counter for each Duration : " + BinaryCount);
     }
@@ -21,12 +24,12 @@ public class BinarySearch {
     public static void bubbleSort(int[] b){
         for(int i = 1 ; i < b.length ;i++){
             for(int j = 0 ; j < b.length - 1 ;j++ ){
-
                 if(b[j] > b[j + 1]){
 
                     int tmp = b[j];
                     b[j] = b[j +1 ];
                     b[j + 1] = tmp;
+                    bubbleSortConter++;
                 }
             }
         }
@@ -71,6 +74,7 @@ public class BinarySearch {
         for(int i : numbers){
             System.out.print(i + " ");
         }
+        System.out.println();
 
     }
     /*
